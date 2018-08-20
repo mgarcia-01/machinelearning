@@ -30,3 +30,9 @@ mod2 <- train(wage~.,method="rf"
 pred1 <- predict(mod1,testing)
 pred2 <- predict(mod2,testing)
 qplot(pred1,pred2,colour=wage,data=testing)
+
+
+
+library(forecast)
+library(quantmod)
+ts1 <- ts()
