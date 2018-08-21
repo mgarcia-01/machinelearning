@@ -32,6 +32,10 @@ pred2 <- predict(mod2,testing)
 qplot(pred1,pred2,colour=wage,data=testing)
 
 
+predDF <- data.frame(pred1,pred2,wage=testing$wage)
+combModFit <- train(wage~.,method="gam",data=predDF)
+combPred <- predict(combModFit,predDF)
+
 
 library(forecast)
 library(quantmod)
