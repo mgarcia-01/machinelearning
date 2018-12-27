@@ -5,4 +5,4 @@ inTrain <- createDataPartition(y=iris$Species,
 
 training <- iris[inTrain,]
 testing <- iris[-inTrain,]
-dim(training);dim(testing)
+dim(training);dim(testing)quit
