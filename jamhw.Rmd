@@ -1,0 +1,45 @@
+---
+title: "R Notebook"
+author: "Michael Garcia"
+output: html_notebook
+---
+
+
+
+```{r regression, echo=TRUE, include=TRUE}
+tmrev <- read.csv("hw_dataset.csv")
+#smpldf <- read.csv("sampledata.csv")
+model1 <- lm(Value~Revenue, data = tmrev)
+#model2 <- lm(annual..sale.in.mil~size.in.sqft.thous, data=smpldf)
+summodel1 <- summary(model1)
+
+#summodel2 <- summary(model2)
+print(summodel1)
+
+
+#print(summodel2)
+```
+
+
+
+
+
+### Example
+```{r sampleplot, echo=FALSE, include=FALSE}
+plot(smpldf$annual..sale.in.mil,smpldf$size.in.sqft.thous)
+abline(lm(smpldf$size.in.sqft.thous ~ smpldf$annual..sale.in.mil))
+```
+
+### HW Plot
+```{r plothw, echo=TRUE, include=TRUE}
+plot(tmrev$Revenue,tmrev$Value)
+abline(lm(tmrev$Value ~ tmrev$Revenue))
+```
+
+
+
+
+```{r coefficients, echo=TRUE)}
+model1$coefficients
+plot(model1)
+```
